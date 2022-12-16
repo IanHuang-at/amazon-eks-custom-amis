@@ -56,8 +56,8 @@ install_iptables_restore
 ### Logrotate ##################################################################
 ################################################################################
 
-curl -sL -o /etc/logrotate.d/kube-proxy https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/logrotate-kube-proxy
-curl -sL -o /etc/logrotate.conf https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/logrotate.conf
+curl -sL -o /etc/logrotate.d/kube-proxy https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/logrotate-kube-proxy
+curl -sL -o /etc/logrotate.conf https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/logrotate.conf
 chown root:root /etc/logrotate.d/kube-proxy
 chown root:root /etc/logrotate.conf
 mkdir -p /var/log/journal
@@ -116,13 +116,13 @@ rm ./*.sha256
 mkdir -p /etc/kubernetes/kubelet
 mkdir -p /etc/systemd/system/kubelet.service.d
 
-curl -sL -o /var/lib/kubelet/kubeconfig https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/kubelet-kubeconfig
+curl -sL -o /var/lib/kubelet/kubeconfig https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/kubelet-kubeconfig
 chown root:root /var/lib/kubelet/kubeconfig
 
-curl -sL -o /etc/systemd/system/kubelet.service https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/kubelet.service
+curl -sL -o /etc/systemd/system/kubelet.service https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/kubelet.service
 chown root:root /etc/systemd/system/kubelet.service
 
-curl -sL -o /etc/kubernetes/kubelet/kubelet-config.json https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/kubelet-config.json
+curl -sL -o /etc/kubernetes/kubelet/kubelet-config.json https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/kubelet-config.json
 chown root:root /etc/kubernetes/kubelet/kubelet-config.json
 
 configure_kubelet_environment
@@ -134,8 +134,8 @@ systemctl daemon-reload && systemctl disable kubelet
 ################################################################################
 
 mkdir -p /etc/eks
-curl -sL -o /etc/eks/eni-max-pods.txt https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/eni-max-pods.txt
-curl -sL -o /etc/eks/bootstrap.sh https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/bootstrap.sh
+curl -sL -o /etc/eks/eni-max-pods.txt https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/eni-max-pods.txt
+curl -sL -o /etc/eks/bootstrap.sh https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/bootstrap.sh
 chmod +x /etc/eks/bootstrap.sh
 
 ################################################################################

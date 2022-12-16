@@ -277,7 +277,7 @@ install_jq() {
 install_iptables_restore() {
     mkdir -p /etc/sysconfig
     bash -c "/sbin/iptables-save > /etc/sysconfig/iptables"
-    curl -sL -o /etc/systemd/system/iptables-restore.service https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/iptables-restore.service
+    curl -sL -o /etc/systemd/system/iptables-restore.service https://raw.githubusercontent.com/awslabs/amazon-eks-ami/2485779f6918a2154d53875157914547fe57bad5/files/iptables-restore.service
     systemctl daemon-reload && systemctl enable iptables-restore
 }
 
